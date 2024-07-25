@@ -1,0 +1,371 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background: #2b3e50;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: #1a252f;
+    color: #fff;
+    text-align: center;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.sidebar-menu li {
+    width: 100%;
+}
+
+.sidebar-menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu li a.active {
+    background: #1a252f;
+}
+
+.sidebar-menu li a .material-icons {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.sidebar-footer {
+    padding: 20px;
+    background: #1a252f;
+    text-align: center;
+}
+
+.sidebar-footer a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sidebar-footer a:hover {
+    background: #2b3e50;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+.topbar {
+    width: calc(100% - 250px);
+    background: #f1f1f1;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 250px; /* Ensuring it doesn't overlap the sidebar */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.topbar-right {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.topbar-right .material-icons {
+    font-size: 24px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 70px; /* Adjusted for topbar height */
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: flex;
+    gap: 10px;
+}
+
+.stat-item {
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    font-size: 1.2em;
+    min-width: 150px;
+}
+
+.stat-item.blue { background: #007bff; }
+.stat-item.yellow { background: #ffc107; }
+.stat-item.green { background: #28a745; }
+.stat-item.red { background: #dc3545; }
+.stat-item.orange { background: #fd7e14; }
+.stat-item.purple { background: #6f42c1; }
+
+
+.map_dashboard {
+    margin-top: 20px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+.calls-container {
+    display: flex;
+    gap: 20px;
+}
+
+.incoming-calls, .call-log {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.incoming-calls h3, .call-log h3 {
+    margin-top: 0;
+}
+
+.call {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #eee;
+    border-radius: 5px;
+}
+
+.answer-btn {
+    background: #ff9800;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.answer-btn:hover {
+    background: #e68900;
+}
+
+.call-log input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.call-log .log p {
+    margin: 10px 0;
+}
+
+
+.answer-call-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 70px; /* Adjusted for topbar height */
+}
+
+.video-section, .caller-info-section {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background: #eee;
+    border-radius: 10px;
+}
+
+.video-placeholder .material-icons {
+    font-size: 150px;
+    color: #ccc;
+}
+
+.video-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.video-controls .material-icons {
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.caller-info-section h3 {
+    margin-top: 0;
+}
+
+.caller-info-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.caller-info-section label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.caller-info-section input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#map {
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#check_fire_station {
+    background: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#check_fire_station:hover {
+    background: #c82333;
+}
+
+/* Styles for the fire station table */
+.check-fire-station-container {
+    margin-top: 70px; /* Adjusted for topbar height */
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.check-fire-station-container h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: #f4f4f4;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn-dispatch {
+    background: #ffc107;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-notify {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-dispatch:hover, .btn-notify:hover {
+    opacity: 0.8;
+}
+
+
+.incident-container {
+    margin-top: 70px; /* Adjusted for topbar height */
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.incident-container h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: #f4f4f4;
+}
