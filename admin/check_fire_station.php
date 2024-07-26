@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js'></script>
 </head>
 <body>
     <div class="sidebar">
@@ -33,9 +35,20 @@
                 <span class="material-icons">account_circle</span> Juan Masipag
             </div>
         </div>
-        <div class="check-fire-station-container">
-            <h3>Available Nearby Firetrucks</h3>
-            <table>
+        <div class="answer-call-container">
+            <div class="video-section">
+                <div class="video-placeholder">
+                    <span class="material-icons">account_circle</span>
+                </div>
+                <div class="video-controls">
+                    <span class="material-icons">videocam_off</span>
+                    <span class="material-icons">mic</span>
+                    <span class="material-icons">call_end</span>
+                </div>
+            </div>
+            <div class="caller-info-section">
+                <h3>Available Nearby Firetruck</h3>
+                <table>
                 <thead>
                     <tr>
                         <th>Truck ID</th>
@@ -43,8 +56,7 @@
                         <th>Station Name</th>
                         <th>Action</th>
                     </tr>
-                </thead>
-                <tbody>
+                    <tbody>
                     <?php
                     $sql = "SELECT * FROM firetrucks";
                     $result = $conn->query($sql);
@@ -63,9 +75,20 @@
                     }
                     ?>
                 </tbody>
-            </table>
+                </thead>
+                </table>
+            </div>
         </div>
-        
     </div>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoieWhhbmllMTUiLCJhIjoiY2x5bHBrenB1MGxmczJpczYxbjRxbGxsYSJ9.DPO8TGv3Z4Q9zg08WhfoCQ';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [121.056269, 14.656903],
+            zoom: 14
+        });
+    </script>
 </body>
 </html>
