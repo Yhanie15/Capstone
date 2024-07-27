@@ -10,24 +10,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css' rel='stylesheet' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js'></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            mapboxgl.accessToken = 'pk.eyJ1IjoieWhhbmllMTUiLCJhIjoiY2x5bHBrenB1MGxmczJpczYxbjRxbGxsYSJ9.DPO8TGv3Z4Q9zg08WhfoCQ';
-            var map = new mapboxgl.Map({
-                container: 'map_dashboard',
-                style: 'mapbox://styles/mapbox/streets-v11',
-                center: [121.0437, 14.6760], // Coordinates of Quezon City
-                zoom: 12
-            });
-
-            var marker = new mapboxgl.Marker()
-                .setLngLat([121.0437, 14.6760])
-                .addTo(map);
-        });
-    </script>
 </head>
 <body>
     <?php include 'sidebar.php'; ?>
+    
     <div class="content" id="main-content">
         <div class="topbar" id="topbar">
             <button id="toggleSidebar" class="toggle-button"><span class="material-icons">menu</span></button>

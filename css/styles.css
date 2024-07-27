@@ -145,6 +145,13 @@ body {
     align-items: center;
     margin-top: 70px; /* Adjusted for topbar height */
     margin-bottom: 20px;
+    transition: all 0.3s;
+    padding-left: 20px;
+}
+
+.header.collapsed {
+    justify-content: center;
+    padding-left: 0;
 }
 
 .stats {
@@ -161,6 +168,7 @@ body {
     min-width: 150px;
 }
 
+
 .stat-item.blue { background: #007bff; }
 .stat-item.yellow { background: #ffc107; }
 .stat-item.green { background: #28a745; }
@@ -173,6 +181,11 @@ body {
     margin-top: 20px;
     height: 500px;
     border-radius: 10px;
+    transition: margin-left 0.3s;
+}
+
+.map_dashboard.collapsed {
+    margin-left: 20px;
 }
 
 .calls-container {
@@ -294,6 +307,11 @@ body {
     height: 200px;
     border-radius: 10px;
     margin-bottom: 10px;
+    transition: margin-left 0.3s;
+}
+
+#map.collapsed {
+    margin-left: 20px;
 }
 
 #check_fire_station {
@@ -329,17 +347,26 @@ table {
     border-collapse: collapse;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
+thead {
+    background: #488ecf;
+    color: #fff;
 }
 
-th, td {
-    padding: 8px;
-    text-align: center;
+thead th {
+    padding: 10px;
+    text-align: left;
 }
 
-th {
-    background: #f4f4f4;
+tbody tr:nth-child(odd) {
+    background: #f1f1f1;
+}
+
+tbody tr:nth-child(even) {
+    background: #e2e2e2;
+}
+
+tbody td {
+    padding: 10px;
 }
 
 a {
@@ -381,10 +408,14 @@ a:hover {
     background: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: calc(100vh - 150px); /* 100vh minus topbar and padding */
+    overflow-y: auto;
 }
 
 .incident-container h3 {
     margin-top: 0;
     margin-bottom: 20px;
 }
+
+
 
