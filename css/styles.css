@@ -417,5 +417,71 @@ a:hover {
     margin-bottom: 20px;
 }
 
+.dispatch-container {
+    margin-top: 70px; /* Adjusted for topbar height */
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+.dispatch-container h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dispatch-main {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.chat-container {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin-top: 20px;
+}
+
+.chat-header {
+    background: #f4f4f4;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-body {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.chat-message {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.chat-user {
+    font-weight: bold;
+}
+
+.chat-text {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.chat-time {
+    color: #999;
+}
+
+.map-container {
+    width: 70%;
+}
+
+#map {
+    width: 100%;
+    margin-bottom: 20px;
+}
 
