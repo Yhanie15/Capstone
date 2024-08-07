@@ -484,4 +484,36 @@ a:hover {
     width: 100%;
     margin-bottom: 20px;
 }
+.add-button-container {
+    margin: 20px 0;
+    text-align: right;
+}
+
+.add-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    margin-top: 70px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.add-button .material-icons {
+    margin-right: 5px;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
 

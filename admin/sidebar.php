@@ -15,7 +15,7 @@
         <li><a href="calls.php"><span class="material-icons">phone</span> Calls</a></li>
         <li><a href="dispatches.php"><span class="material-icons">local_shipping</span> Dispatches</a></li>
         <li><a href="incidents.php"><span class="material-icons">report</span> Incidents</a></li>
-        <li><a href="firetrucks.php"><span class="material-icons">local_fire_department</span> Fire Stations</a></li>
+        <li><a href="firestations.php"><span class="material-icons">local_fire_department</span> Fire Stations</a></li>
         <li><a href="report.php"><span class="material-icons">assignment</span> Report</a></li>
     </ul>
     <div class="sidebar-footer">
