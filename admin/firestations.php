@@ -12,70 +12,63 @@
     <?php include 'sidebar.php'; ?>
     <div class="content" id="main-content">
         <div class="topbar" id="topbar">
-            <button id="toggleSidebar" class="toggle-button"><span class="material-icons">menu</span></button>
+            <button id="toggleSidebar" class="toggle-button">
+                <span class="material-icons">menu</span>
+            </button>
             <div class="topbar-right">
                 <span class="material-icons">notifications</span>
                 <span class="material-icons">account_circle</span> Juan Masipag
             </div>
         </div>
-        <div class="add-button-container">
-            <button class="add-button" onclick="window.location.href='add_firestation.php'"><span class="material-icons">add</span> Add Fire Station</button>
+
+        <div class="header">
+            <div class="add-button-container">
+                <button class="add-button" onclick="window.location.href='add_firestation.php'">
+                    <span class="material-icons">add</span> Add Fire Station
+                </button>
+            </div>
         </div>
-        <?php
-        if (isset($_GET['message'])) {
-            echo "<p class='success-message'>" . htmlspecialchars($_GET['message']) . "</p>";
-        }
-        ?>
-        <div class="fire-station-tables">
+
+        <?php if (isset($_GET['message'])): ?>
+            <p class="success-message"><?= htmlspecialchars($_GET['message']) ?></p>
+        <?php endif; ?>
+
+        <div class="fire-station-cards">
             <h2>Fire Station Information</h2>
             
             <?php
-            // Fetch fire stations from the database
             $sql = "SELECT * FROM fire_stations ORDER BY district";
             $result = $conn->query($sql);
-
-            // Initialize an array to hold fire stations by district
             $fireStationsByDistrict = [];
 
             if ($result->num_rows > 0) {
-                // Organize fire stations by district
                 while($row = $result->fetch_assoc()) {
                     $fireStationsByDistrict[$row["district"]][] = $row;
                 }
             }
 
-            // Display all 6 districts
             for ($district = 1; $district <= 6; $district++) {
                 echo "<div class='district-group'>";
                 echo "<h3>District " . $district . "</h3>";
 
                 if (isset($fireStationsByDistrict[$district])) {
-                    echo "<table>
-                            <tr>
-                                <th>Station Name</th>
-                                <th>Address</th>
-                                <th>Contact</th>
-                                <th>Email</th>
-                                <th>Number of Trucks</th>
-                                <th>Actions</th>
-                            </tr>";
+                    echo "<div class='cards-container'>";
 
                     foreach ($fireStationsByDistrict[$district] as $station) {
-                        echo "<tr>
-                                <td>" . htmlspecialchars($station["station_name"]) . "</td>
-                                <td>" . htmlspecialchars($station["address"]) . "</td>
-                                <td>" . htmlspecialchars($station["contact"]) . "</td>
-                                <td>" . htmlspecialchars($station["email"]) . "</td>
-                                <td>" . htmlspecialchars($station["num_trucks"]) . "</td>
-                                <td><a href='view_firestation.php?id=" . htmlspecialchars($station["id"]) . "' class='view-button'>View</a></td>
-                              </tr>";
+                        echo "<div class='card'>
+                                <img src='../images/station.jpg' alt='" . htmlspecialchars($station["station_name"]) . "' class='card-image'>
+                                <div class='card-content'>
+                                    <h4>" . htmlspecialchars($station["station_name"]) . "</h4>
+                                    <p><span class='material-icons'>call</span> " . htmlspecialchars($station["contact"]) . "</p>
+                                </div>
+                              </div>";
                     }
 
-                    echo "</table>";
+                    echo "</div>";
                 } else {
                     echo "<p>No fire stations in this district.</p>";
                 }
-                echo "</div>"; // Close district group
+                echo "</div>";
             }
 
             $conn->close();

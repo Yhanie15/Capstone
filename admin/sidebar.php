@@ -19,7 +19,7 @@
         <li><a href="report.php"><span class="material-icons">assignment</span> Report</a></li>
     </ul>
     <div class="sidebar-footer">
-        <a href="logout.php"><span class="material-icons">logout</span> Logout</a>
+        <a href="login.php"><span class="material-icons">logout</span> Logout</a>
     </div>
 </div>
 </body>
